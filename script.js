@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const output = document.getElementById("output");
     let music = null; // Define the music variable globally
     let typingSound = null; // Define the typing sound variable globally
-
+    let isTyping = false; // Flag to track whether typing is in progress
 
     terminalInput.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
@@ -34,19 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
             printOutput("Email: kaanakguldev@gmail.com<br>LinkedIn: linkedin.com/in/kaan-akgul/");
         } else if (command === "clear") {
             output.innerHTML = "";
-            stopMusic();
-            stopTypingSound();
+            if (music) stopMusic();
+            stopTypingSound(); // Stops typing sound and animation
         } else if (command === "music") {
             playMusic();
         } else if (command === "mute") {
-        stopMusic();
+            stopMusic();
         } else if (command === "") {
             printOutput("Please enter a command. Type 'help' for a list of commands.");
-
         } else if (command === "joke") {
             printOutput("- Erol says hi.<br>+ Which Erol?<br>- Profiterol!");
-        
-        }else {
+        } else {
             printOutput(`Command not found: ${command}`);
         }
     }
@@ -63,9 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const segments = text.split(/(<[^>]+>)/g); // Regex splits by HTML tags
         let i = 0;
         const typingSpeed = 50; // Typing speed in milliseconds
-        const startDelay = 500; // Delay before typing starts (400ms)
+        const startDelay = 500; // Delay before typing starts
+
+        isTyping = true; // Set typing flag to true
 
         function typeWriter() {
+            if (!isTyping) return; // Exit if typing has been canceled
+
             if (i < segments.length) {
                 const segment = segments[i];
 
@@ -77,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const chars = segment.split("");
                     chars.forEach((char, charIndex) => {
                         setTimeout(() => {
+                            if (!isTyping) return; // Exit if typing has been canceled
                             newLine.innerHTML += char;
 
                             // Adjust pitch and play typing sound
@@ -92,11 +95,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Move to the next segment after the current one finishes
                 i++;
                 setTimeout(typeWriter, segment.length * typingSpeed);
+            } else {
+                isTyping = false; // Reset the flag when typing finishes
             }
         }
 
         // Start the typewriter animation after the delay
-        setTimeout(typeWriter, startDelay);
+        setTimeout(() => {
+            if (isTyping) typeWriter();
+        }, startDelay);
     }
 
     function playMusic() {
@@ -105,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
             music.loop = true; // Set to true if you want the track to loop
             music.volume = 0.5; // Adjust volume as needed
         }
-    
+
         // Start playing the track
         music.play().then(() => {
             printOutput("Credits go to Morax_BloodTubers on Pixabay 🎵");
@@ -114,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Music play error:", error);
         });
     }
-    
+
     function stopMusic() {
         if (music) { // Check if the music is playing
             music.pause(); // Pause the music
@@ -130,8 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
             typingSound.pause(); // Pause the sound
             typingSound.currentTime = 0; // Reset to the beginning
         }
+        isTyping = false; // Cancel the typewriter animation
     }
-    
-    
-    
 });
