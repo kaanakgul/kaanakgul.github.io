@@ -16,7 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
         if (command === "help") {
             printOutput("Available commands: about, projects, contact, clear, music, mute, joke");
         } else if (command === "about") {
-            printOutput("Hi, I'm Kaan! I'm a software engineer and game developer.");
+            printOutput(
+                "Hi, I'm Kaan! I'm a passionate software engineer and game developer based in Turkey.<br>" +
+                "With a strong foundation in Unity and C#, I specialize in creating immersive gaming experiences and interactive systems.<br>" +
+                "Beyond game development, I have experience in web design, blending creativity with technical expertise to build engaging web solutions.<br>" +
+                "<br>" +
+                "What drives me? Innovation, problem-solving, and the thrill of turning ideas into reality. Whether it's crafting a new gameplay mechanic,<br>" +
+                "designing a seamless user interface, or composing music for games, I love exploring every aspect of development.<br>" +
+                "<br>" +
+                "In my free time, you’ll find me practicing Brazilian Jiu-Jitsu, creating hip-hop beats, or diving into new RPGs.<br>" +
+                "Let's connect and bring your ideas to life!"
+            );
         } else if (command === "projects") {
             printOutput("Below is a list of all my projects:<br>1. Ninja Survivors - Horde Survivor/Rougelike<br>2. Poker Game developed on Unity<br>3. GENMER Architecture & Stone (Website)");
         } else if (command === "contact") {
