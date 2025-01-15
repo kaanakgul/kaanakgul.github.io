@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+    color: #00FF00; /* Neon green text */
+    font-family: 'Courier New', monospace; /* Terminal font */
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#terminal {
+    width: 80%;
+    max-width: 800px;
+    border: 2px solid #00FF00;
+    padding: 20px;
+    box-shadow: 0 0 10px #00FF00;
+}
+
+.prompt {
+    color: #33FF33;
+}
+
+.command {
+    font-weight: bold;
+    color: #00FF00;
+}
+
+#terminal-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #00FF00;
+    width: 100%;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blinking-cursor {
+    display: inline-block;
+    width: 8px;
+    background-color: #00FF00;
+    height: 16px;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
