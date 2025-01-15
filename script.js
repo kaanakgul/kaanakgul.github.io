@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function processCommand(command) {
         if (command === "help") {
-            printOutput("Available commands: about, projects, contact, clear, music, mute, joke");
+            printOutput("Available commands: about, projects, contact, music, mute, joke, clear");
         } else if (command === "about") {
             printOutput(
                 "Hi, I'm Kaan! I'm a passionate software engineer and game developer based in Turkey.<br>" +
@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
             printOutput("Email: kaanakguldev@gmail.com<br>LinkedIn: linkedin.com/in/kaan-akgul/");
         } else if (command === "clear") {
             output.innerHTML = "";
+            stopMusic();
+            stopTypingSound();
         } else if (command === "music") {
             playMusic();
         } else if (command === "mute") {
@@ -121,6 +123,14 @@ document.addEventListener("DOMContentLoaded", () => {
             printOutput("No music is currently playing.");
         }
     }
+
+    function stopTypingSound() {
+        if (typingSound) { // Ensure the typing sound is initialized
+            typingSound.pause(); // Pause the sound
+            typingSound.currentTime = 0; // Reset to the beginning
+        }
+    }
+    
     
     
 });
