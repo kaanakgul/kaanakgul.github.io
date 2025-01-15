@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const terminalInput = document.getElementById("terminal-input");
     const output = document.getElementById("output");
     let music = null; // Define the music variable globally
+    let typingSound = null; // Define the typing sound variable globally
 
 
     terminalInput.addEventListener("keydown", (event) => {
@@ -54,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const newLine = document.createElement("p");
         output.appendChild(newLine);
 
-        const typingSound = new Audio("sounds/type-sound.wav"); // Path to your typing sound file
+        typingSound = new Audio("sounds/type-sound.wav"); // Path to your typing sound file
         typingSound.loop = false; // Disable looping, as we play it per character
-        typingSound.volume = 0.3; // Adjust volume
+        typingSound.volume = 0.6; // Adjust volume
 
         // Split the text into segments (HTML tags and plain text)
         const segments = text.split(/(<[^>]+>)/g); // Regex splits by HTML tags
