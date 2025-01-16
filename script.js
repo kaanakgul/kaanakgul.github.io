@@ -1,6 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
     const terminalInput = document.getElementById("terminal-input");
     const output = document.getElementById("output");
+    const asciiArt = `                               
+                 ....####**.:..                   
+                .*%%%%#%%%%%%#%%.                 
+            ..=*%%#@%%%%%%#%%%@%%.                
+            .-%%%%%%%%%@@%%%%%%%@%..              
+           .-#%%*====+***####%%%%%%.              
+            :%%%===--------==+#%%%#.              
+            #%#+=----::::----==++##               
+            .%%*==------:-----=++%%               
+            .*%+==+=-------==**=+%#               
+            .=%===+%%=+--=*%@#+++#*.              
+           .=-==========-=+======*-+              
+            :-===-----==-===---===-=              
+            .--*=-----=-:-=----====.              
+              ..==---=*#=#+---===.                
+               .==-=#======+#===-                 
+                -==+--==-=+=*==+                  
+                -=*#=-=##*-=+*#+                  
+                ===%%#*++*+##*==                  
+               .==--=+%#%##=====.                 
+             .#==------------==++%@               
+           .*#%%==-----------===%%%%%.            
+        .*#%%%%%%+=---------===*%%%%%%%%%         
+     .*#%%%%%%%%@%%%-------=-=%%%%%%%%%%%%%%.     
+ ..##%%%%%%%%%%%%%%@%@@%%%%@@@@%%%%%%%%%%%%%%%%.  
+.##%%%%%%%%%%%%%%%%%%%%%%@%%%%%%%%%%%%%%%%%%%%%%% 
+##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    `;
+    const asciiContainer = document.getElementById("ascii-art");
+    asciiContainer.innerHTML = `<pre>${asciiArt}</pre>`;
     let music = null; // Define the music variable globally
     let typingSound = null; // Define the typing sound variable globally
     let isTyping = false; // Flag to track whether typing is in progress

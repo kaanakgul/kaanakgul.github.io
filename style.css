@@ -11,12 +11,24 @@ body {
     height: 100vh;
 }
 
+#ascii-art {
+    color: green;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    text-align: center;
+    white-space: pre;
+    margin-left: 50px; /* Add spacing between ASCII art and terminal */
+    
+}
+
 #terminal {
-    width: 80%;
-    max-width: 800px;
-    border: 2px solid #00FF00;
+    background-color: black;
+    color: green;
+    font-family: 'Courier New', monospace;
     padding: 20px;
-    box-shadow: 0 0 10px #00FF00;
+    border: 2px solid green;
+    width: 50%;
+    margin: 0 auto; /* Center the terminal horizontally */
 }
 
 .prompt {
