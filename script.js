@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Let's connect and bring your ideas to life!"
             );
         } else if (command === "projects") {
-            printOutput("Below is a list of all my projects:<br>1. Ninja Survivors - Horde Survivor/Rougelike<br>2. Poker Game developed on Unity (WIP)<br>3. GENMER Architecture & Stone (Website)<br>4. This website!<br>5. Secret Project (TBA)");
+            printOutput("Below is a list of all my projects:<br>1. Pishty: a traditional Turkish card game adapted into a pc game - My first unity project.<br>2. Ninja Survivors - Horde Survivor/Rougelike<br>3. Poker Game developed on Unity (WIP)<br>4. GENMER Architecture & Stone (Website)<br>5. This website!<br>6. Secret Project (TBA)");
         } else if (command === "contact") {
             printOutput("Email: kaanakguldev@gmail.com<br>LinkedIn: linkedin.com/in/kaan-akgul/");
         } else if (command === "clear") {
