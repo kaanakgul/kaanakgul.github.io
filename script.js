@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function processCommand(command) {
         if (command === "help") {
-            printOutput("Available commands: about, projects, contact, music, mute, joke, clear, ninja survivors");
+            printOutput("Available commands: about, projects, contact, music, mute, joke, clear, ninja");
         } else if (command === "about") {
             printOutput(
                 "Hi, I'm Kaan! I'm a passionate software engineer and game developer based in Turkey.<br>" +
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             printOutput("Below is a list of all my projects:<br>1. Pishty: a traditional Turkish card game adapted into a pc game - My first unity project.<br>2. Ninja Survivors - Horde Survivor/Rougelike<br>3. Poker Game developed on Unity (WIP)<br>4. GENMER Architecture & Stone (Website)<br>5. This website!<br>6. Secret Project (TBA)");
         } else if (command === "contact") {
             printOutput("Email: kaanakguldev@gmail.com<br>LinkedIn: linkedin.com/in/kaan-akgul/");
-        } else if (command === "ninja survivors") {
+        } else if (command === "ninja") {
             window.location.href = "https://kaanakguldev.com/ninjasurvivors";
         } else if (command === "clear") {
             output.innerHTML = "";
