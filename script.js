@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (command === "contact") {
             printOutput("Email: kaanakguldev@gmail.com<br>LinkedIn: linkedin.com/in/kaan-akgul/");
         } else if (command == "ninja") {
-            window.location.href = "https://kaanakguldev.com/ninjasurvivors";
+            window.location.href = "https://kaanakgul.dev/ninjasurvivors";
         } else if (command === "clear") {
             output.innerHTML = "";
             if (music) stopMusic();
