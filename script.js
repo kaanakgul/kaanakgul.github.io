@@ -45,23 +45,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function processCommand(command) {
         if (command === "help") {
-            printOutput("Available commands: about, projects, contact, music, mute, joke, clear, ninja");
+            printOutput("Available commands: about, experience, projects, contact, ninja, music, mute, joke, clear");
         } else if (command === "about") {
             printOutput(
-                "Hi, I'm Kaan! I'm a passionate software engineer and game developer based in Turkey.<br>" +
-                "With a strong foundation in Unity and C#, I specialize in creating immersive gaming experiences and interactive systems.<br>" +
-                "Beyond game development, I have experience in web design, blending creativity with technical expertise to build engaging web solutions.<br>" +
+                "Hi, I'm Kaan, a software engineer based in İstanbul, focused on backend and full-stack development.<br>" +
+                "BSc in Software Engineering, Bahçeşehir University (2026).<br>" +
+                "I work mainly with Java/Spring Boot, TypeScript and C#/.NET, building REST APIs, real-time features and web applications.<br>" +
                 "<br>" +
-                "What drives me? Innovation, problem-solving, and the thrill of turning ideas into reality. Whether it's crafting a new gameplay mechanic,<br>" +
-                "designing a seamless user interface, or composing music for games, I love exploring every aspect of development.<br>" +
+                "Outside of work: Brazilian Jiu-Jitsu, making hip-hop beats and RPGs."
+            );
+        } else if (command === "experience") {
+            printOutput(
+                "Freelance Full-Stack Developer (2024 - present)<br>" +
+                "- Next.js, TypeScript, PostgreSQL, Astro, WordPress, Docker<br>" +
                 "<br>" +
-                "In my free time, you’ll find me practicing Brazilian Jiu-Jitsu, creating hip-hop beats, or diving into new RPGs.<br>" +
-                "Let's connect and bring your ideas to life!"
+                "Software Engineering Intern, Bileşim A.Ş. (2026)<br>" +
+                "- Enterprise C#/.NET, NUnit testing, debugging and maintenance<br>" +
+                "<br>" +
+                "Software Engineer, MANC Games (2022 - 2025)<br>" +
+                "- Unity/C#, Java/Spring Boot REST APIs, TypeScript/Socket.IO multiplayer"
             );
         } else if (command === "projects") {
-            printOutput("Below is a list of all my projects:<br>1. Pishty: a traditional Turkish card game adapted into a pc game - My first unity project.<br>2. Ninja Survivors - Horde Survivor/Rougelike<br>3. Poker Game developed on Unity (WIP)<br>4. GENMER Architecture & Stone (Website)<br>5. This website!<br>6. Secret Project (TBA)");
+            printOutput(
+                "Commercial:<br>" +
+                "- hurkandenizyilmaz.com: photographer portfolio website (Astro)<br>" +
+                "- GENMER Architecture & Stone: company website (freelance)<br>" +
+                "- Construction Finance Tracker: private application, in development<br>" +
+                "<br>" +
+                "Academic (team project):<br>" +
+                "- Automated Music Segmentation: BSc capstone, a distributed audio analysis system (FastAPI, RabbitMQ, PostgreSQL, Svelte)<br>" +
+                "<br>" +
+                "Personal:<br>" +
+                "- This website<br>" +
+                "<br>" +
+                "Game development (team project):<br>" +
+                "- Ninja Survivors: Unity/C# survival game, developed with Batuhan Balım during my training at MANC Games. Playable in the browser on desktop (type 'ninja')"
+            );
         } else if (command === "contact") {
-            printOutput("Email: kaanakguldev@gmail.com<br>LinkedIn: linkedin.com/in/kaan-akgul/");
+            printOutput("Email: kakgul2001@gmail.com<br>LinkedIn: linkedin.com/in/kaan-akgul/<br>GitHub: github.com/kaanakgul");
         } else if (command == "ninja") {
             window.location.href = "https://kaanakgul.dev/ninjasurvivors";
         } else if (command === "clear") {
